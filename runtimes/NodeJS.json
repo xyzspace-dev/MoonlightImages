@@ -1,7 +1,7 @@
 {
   "Name": "NodeJS",
   "Author": "contact@tnsstudio.net",
-  "UpdateUrl": "https://github.com/TNSStudio-HQ/MoonlightImages/blob/main/runtimes/NodeJS.json",
+  "UpdateUrl": "https://raw.githubusercontent.com/TNSStudio-HQ/MoonlightImages/main/runtimes/NodeJS.json",
   "DonateUrl": "https://ko-fi.com/tnsjesper",
   "StartupCommand": "node ${MAIN_FILE}",
   "OnlineDetection": "Server is now Ready",
