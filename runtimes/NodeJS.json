@@ -1,20 +1,20 @@
 {
   "Name": "NodeJS",
   "Author": "contact@tnsstudio.net",
-  "UpdateUrl": null,
+  "UpdateUrl": "https://github.com/TNSStudio-HQ/MoonlightImages/blob/main/runtimes/NodeJS.json",
   "DonateUrl": "https://ko-fi.com/tnsjesper",
-  "StartupCommand": "if [[ -d .git ]] && [[ {{AUTO_UPDATE}} == \"1\" ]]; then git pull; fi; if [[ ! -z ${NODE_PACKAGES} ]]; then /usr/local/bin/npm install ${NODE_PACKAGES}; fi; if [[ ! -z ${UNNODE_PACKAGES} ]]; then /usr/local/bin/npm uninstall ${UNNODE_PACKAGES}; fi; if [ -f /home/container/package.json ]; then /usr/local/bin/npm install; fi; if [[ \"${MAIN_FILE}\" == \"*.js\" ]]; then /usr/local/bin/node \"/home/container/${MAIN_FILE}\" ${NODE_ARGS}; else /usr/local/bin/ts-node --esm \"/home/container/${MAIN_FILE}\" ${NODE_ARGS}; fi",
-  "OnlineDetection": "NodeJS Is Online",
+  "StartupCommand": "node ${MAIN_FILE}",
+  "OnlineDetection": "Server is now Ready",
   "StopCommand": "^C",
   "InstallShell": "/bin/bash",
-  "InstallDockerImage": "moonlightpanel/images:installerjava",
-  "InstallScript": "apt update\r\napt install -y git curl jq file unzip make gcc g++ python3 python3-dev python3-pip libtool\r\n\r\necho -e \"updating npm. please wait...\"\r\nnpm install npm@latest --location=global\r\n\r\nmkdir -p /mnt/server\r\ncd /mnt/server\r\n\r\necho \"Installing nodejs packages\"\r\nif [[ ! -z ${NODE_PACKAGES} ]]; then\r\n    /usr/local/bin/npm install ${NODE_PACKAGES}\r\nfi\r\n\r\nif [ -f /mnt/server/package.json ]; then\r\n    /usr/local/bin/npm install --production\r\nfi\r\n\r\necho -e \"NodeJS is now ready\"\r\nexit 0",
+  "InstallDockerImage": "ghcr.io/pterodactyl/installers:debian",
+  "InstallScript": "echo -e \"Hello and Welcome!\"\r\necho -e \"NodeJS is now installing...\"\r\n\r\napt update && apt upgrade -y\r\necho -e \"updating npm. please wait...\"\r\nnpm install npm@latest --location=global\r\n\r\nmkdir -p /mnt/server\r\ncd /mnt/server\r\n\r\necho \"Installing nodejs packages\"\r\nif [[ ! -z ${NODE_PACKAGES} ]]; then\r\n    /usr/local/bin/npm install ${NODE_PACKAGES}\r\nfi\r\n\r\nif [ -f /mnt/server/package.json ]; then\r\n    /usr/local/bin/npm install --production\r\nfi\r\n\r\necho -e \"NodeJS is now ready\"\r\nexit 0",
   "ParseConfiguration": "[]",
   "AllocationsNeeded": 1,
   "Variables": [
     {
       "Key": "MAIN_FILE",
-      "DefaultValue": "",
+      "DefaultValue": "index.js",
       "DisplayName": "Main File",
       "Description": "The Main File like index.js",
       "AllowView": true,
@@ -26,28 +26,38 @@
   "AllowDockerImageChange": true,
   "DockerImages": [
     {
-      "DisplayName": "Node JS 19",
-      "Name": "moonlightpanel/images:nodejs19",
+      "DisplayName": "NodeJS 19",
+      "Name": "ghcr.io/tnsstudio-hq/moonlightdockerimages:nodejs19",
       "AutoPull": true
     },
     {
-      "DisplayName": "Node JS 18",
-      "Name": "moonlightpanel/images:nodejs18",
+      "DisplayName": "NodeJS 18",
+      "Name": "ghcr.io/tnsstudio-hq/moonlightdockerimages:nodejs18",
       "AutoPull": true
     },
     {
-      "DisplayName": "Node JS 16",
-      "Name": "moonlightpanel/images:nodejs16",
+      "DisplayName": "NodeJS 16",
+      "Name": "ghcr.io/tnsstudio-hq/moonlightdockerimages:nodejs16",
       "AutoPull": true
     },
     {
-      "DisplayName": "Node JS 14",
-      "Name": "moonlightpanel/images:nodejs14",
+      "DisplayName": "NodeJS 14",
+      "Name": "ghcr.io/tnsstudio-hq/moonlightdockerimages:nodejs14",
       "AutoPull": true
     },
     {
-      "DisplayName": "Node JS 12",
-      "Name": "moonlightpanel/images:nodejs12",
+      "DisplayName": "NodeJS 17",
+      "Name": "ghcr.io/tnsstudio-hq/moonlightdockerimages:nodejs17",
+      "AutoPull": true
+    },
+    {
+      "DisplayName": "NodeJS 20",
+      "Name": "ghcr.io/tnsstudio-hq/moonlightdockerimages:nodejs20",
+      "AutoPull": true
+    },
+    {
+      "DisplayName": "NodeJS 21",
+      "Name": "ghcr.io/tnsstudio-hq/moonlightdockerimages:nodejs21",
       "AutoPull": true
     }
   ]
