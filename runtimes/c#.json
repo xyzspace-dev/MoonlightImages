@@ -20,7 +20,7 @@
       "AllowView": true,
       "AllowEdit": true,
       "Filter": null
-    }
+    },
     {
       "Key": "PROJECT_DIR",
       "DefaultValue": "",
