@@ -1,7 +1,7 @@
 {
   "Name": "Minecraft Paper",
   "Author": "contact@tnsjesper.xyz",
-  "UpdateUrl": null,
+  "UpdateUrl": "https://raw.githubusercontent.com/TNSStudio-HQ/MoonlightImages/main/games/MinecraftPaper.json",
   "DonateUrl": "https://ko-fi.com/tnsjesper",
   "StartupCommand": "java --add-modules=jdk.incubator.vector -Xms128M -Xmx{{SERVER_MEMORY}}M -Dterminal.jline=false -Dterminal.ansi=true -jar {{SERVER_JARFILE}}",
   "OnlineDetection": "Type !help for help.",
@@ -34,11 +34,6 @@
   "DefaultDockerImage": 0,
   "AllowDockerImageChange": true,
   "DockerImages": [
-    {
-      "DisplayName": "Java 18",
-      "Name": "ghcr.io/tnsstudio-hq/moonlightdockerimages:java18",
-      "AutoPull": true
-    },
     {
       "DisplayName": "Java 19",
       "Name": "ghcr.io/tnsstudio-hq/moonlightdockerimages:java19",
@@ -77,6 +72,11 @@
     {
       "DisplayName": "Java 17",
       "Name": "ghcr.io/tnsstudio-hq/moonlightdockerimages:java17",
+      "AutoPull": true
+    },
+    {
+      "DisplayName": "Java 18",
+      "Name": "ghcr.io/tnsstudio-hq/moonlightdockerimages:java18",
       "AutoPull": true
     }
   ]
