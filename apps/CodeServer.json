@@ -1,7 +1,7 @@
 {
   "Name": "Code Server",
   "Author": "Jesper Richert",
-  "UpdateUrl": null,
+  "UpdateUrl": "https://raw.githubusercontent.com/TNSStudio-HQ/MoonlightImages/main/apps/CodeServer.json",
   "DonateUrl": "https:ko-fi.com/tnsjesper",
   "StartupCommand": "sh .local/lib/code-server-{{VERSION}}/bin/code-server",
   "OnlineDetection": "HTTP server listening on",
