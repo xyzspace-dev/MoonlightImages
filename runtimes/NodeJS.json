@@ -59,6 +59,11 @@
       "DisplayName": "NodeJS 21",
       "Name": "ghcr.io/tnsstudio-hq/moonlightdockerimages:nodejs21",
       "AutoPull": true
+    },
+    {
+      "DisplayName": "NodeJS 22",
+      "Name": "ghcr.io/tnsstudio-hq/moonlightdockerimages:nodejs22",
+      "AutoPull": true
     }
   ]
 }
