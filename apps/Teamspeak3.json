@@ -1,0 +1,43 @@
+{
+  "Name": "Teamspeak3",
+  "Author": "Jesper Richert",
+  "UpdateUrl": null,
+  "DonateUrl": "https://ko-fi.com/tnsjesper",
+  "StartupCommand": "./ts3server default_voice_port={{SERVER_PORT}} query_port={{ML_PORT_1}} filetransfer_ip=0.0.0.0 filetransfer_port={{ML_PORT_2}} serveradmin_password={{SERVERADMIN_PASSWORD}} license_accepted=1",
+  "OnlineDetection": "listening\\ on\\ 0\\.0\\.0\\.0:",
+  "StopCommand": "^C",
+  "InstallShell": "/bin/bash",
+  "InstallDockerImage": "debian:latest",
+  "InstallScript": "#!/bin/bash\r\n# TS3 Installation Script\r\n#\r\n# Server Files: /mnt/server\r\n\r\napt update && apt install curl jq tar bzip2 -y\r\n\r\nif [ -z ${TS_VERSION} ] || [ ${TS_VERSION} == latest ]; then\r\n    TS_VERSION=$(curl -sSL https://teamspeak.com/versions/server.json | jq -r '.linux.x86_64.version')\r\nfi\r\n\r\ncd /mnt/server\r\n\r\necho -e \"getting files from http://files.teamspeak-services.com/releases/server/${TS_VERSION}/teamspeak3-server_linux_x86-${TS_VERSION}.tar.bz2\" \r\ncurl -L http://files.teamspeak-services.com/releases/server/${TS_VERSION}/teamspeak3-server_linux_amd64-${TS_VERSION}.tar.bz2 | tar -xvj --strip-components=1",
+  "ParseConfiguration": "[]",
+  "AllocationsNeeded": 3,
+  "Variables": [
+    {
+      "Key": "SERVERADMIN_PASSWORD",
+      "DefaultValue": "",
+      "DisplayName": "Server Query Admin Password",
+      "Description": "The password for the server query admin user.",
+      "AllowView": true,
+      "AllowEdit": true,
+      "Filter": null
+    },
+    {
+      "Key": "TS_VERSION",
+      "DefaultValue": "latest",
+      "DisplayName": "Server Version",
+      "Description": "The version of Teamspeak 3 to use when running the server.",
+      "AllowView": true,
+      "AllowEdit": true,
+      "Filter": null
+    }
+  ],
+  "DefaultDockerImage": 0,
+  "AllowDockerImageChange": true,
+  "DockerImages": [
+    {
+      "DisplayName": "TS3",
+      "Name": "ghcr.io/tnsstudio-hq/moonlightdockerimages:debian",
+      "AutoPull": true
+    }
+  ]
+}
