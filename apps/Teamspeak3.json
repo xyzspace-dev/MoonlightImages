@@ -1,7 +1,7 @@
 {
   "Name": "Teamspeak3",
   "Author": "Jesper Richert",
-  "UpdateUrl": null,
+  "UpdateUrl": "https://raw.githubusercontent.com/TNSStudio-HQ/MoonlightImages/main/apps/Teamspeak3.json",
   "DonateUrl": "https://ko-fi.com/tnsjesper",
   "StartupCommand": "./ts3server default_voice_port={{SERVER_PORT}} query_port={{ML_PORT_1}} filetransfer_ip=0.0.0.0 filetransfer_port={{ML_PORT_2}} serveradmin_password={{SERVERADMIN_PASSWORD}} license_accepted=1",
   "OnlineDetection": "listening\\ on\\ 0\\.0\\.0\\.0:",
