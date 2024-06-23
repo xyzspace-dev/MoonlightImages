@@ -4,7 +4,7 @@
   "UpdateUrl": "https://raw.githubusercontent.com/TNSStudio-HQ/MoonlightImages/main/runtimes/Nginx.json",
   "DonateUrl": "https://ko-fi.com/tnsjesper",
   "StartupCommand": "{{STARTUP_CMD}}",
-  "OnlineDetection": "{{STARTUP_CMD}}",
+  "OnlineDetection": "✓ Successfully started",
   "StopCommand": "^SIGKILL",
   "InstallShell": "/bin/bash",
   "InstallDockerImage": "debian:latest",
