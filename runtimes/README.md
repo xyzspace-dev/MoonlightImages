@@ -6,3 +6,4 @@ In this Folder you find all Runtimes
 
 - [NodeJS](/runtimes/NodeJS.json)
 - [C#](c#.json)
+- [Nginx](Nginx.json)
