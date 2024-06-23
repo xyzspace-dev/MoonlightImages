@@ -1,0 +1,34 @@
+{
+  "Name": "Nginx",
+  "Author": "contacta@tnsjesper.xyz",
+  "UpdateUrl": null,
+  "DonateUrl": "https://ko-fi.com/tnsjesper",
+  "StartupCommand": "{{STARTUP_CMD}}",
+  "OnlineDetection": "{{STARTUP_CMD}}",
+  "StopCommand": "^SIGKILL",
+  "InstallShell": "/bin/bash",
+  "InstallDockerImage": "debian:latest",
+  "InstallScript": "#!/bin/bash\n\ncd /mnt/server\n\napt update -y\n\necho \"Download Packages\"\n\napt install unzip curl php-fpm -y\n\necho \"Pull Nginx Files\"\ncurl -L -o nginx.zip https://github.com/TNSStudio-HQ/MoonlightDockerImages/raw/main/installer/nginx/server-files/nginx.zip\n\n\necho \"Unzipping nginx.zip...\"\nunzip nginx.zip\necho \"Removeing Files\"\nrm -r nginx.zip\n\necho \"Chmod Serverfiles\"  \nchmod -R 777 start.sh\n\necho \"Ready to Launch\"\n",
+  "ParseConfiguration": "[{\"Type\":\"file\",\"File\":\"nginx/conf.d/default.conf\",\"Configuration\":{\"    listen\":\"    listen {{SERVER_PORT}};\"}}]",
+  "AllocationsNeeded": 1,
+  "Variables": [
+    {
+      "Key": "STARTUP_CMD",
+      "DefaultValue": "bash /home/container/start.sh",
+      "DisplayName": "Startup Command",
+      "Description": "The command to start",
+      "AllowView": true,
+      "AllowEdit": true,
+      "Filter": null
+    }
+  ],
+  "DefaultDockerImage": 0,
+  "AllowDockerImageChange": true,
+  "DockerImages": [
+    {
+      "DisplayName": "ghcr.io/tnsstudio-hq/moonlightdockerimages:nginx",
+      "Name": "ghcr.io/tnsstudio-hq/moonlightdockerimages:nginx",
+      "AutoPull": true
+    }
+  ]
+}
