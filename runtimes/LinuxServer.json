@@ -1,0 +1,34 @@
+{
+  "Name": "Linux Server",
+  "Author": "contact@tnsjesper.xyz",
+  "UpdateUrl": null,
+  "DonateUrl": "https://ko-fi.com/tnsjesper",
+  "StartupCommand": "pip install aiohttp asyncio aiofiles; python /home/container/server.py",
+  "OnlineDetection": "Container is now ready",
+  "StopCommand": "^SIGKILL",
+  "InstallShell": "/bin/bash",
+  "InstallDockerImage": "debian:latest",
+  "InstallScript": "#! /bin/bash\n\n\napt update -y\napt install curl tar git -y \n\ncurl -Lo server.py https://github.com/TNSStudio-HQ/MoonlightDockerImages/raw/main/installer/linuxserver/server.py\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+  "ParseConfiguration": "[]",
+  "AllocationsNeeded": 1,
+  "Variables": [
+    {
+      "Key": "PASSWORD",
+      "DefaultValue": "WCx@DcYWSBTHrk^24%B7s##58",
+      "DisplayName": "Login Password",
+      "Description": "Set the Defaul Login Password",
+      "AllowView": true,
+      "AllowEdit": true,
+      "Filter": null
+    }
+  ],
+  "DefaultDockerImage": 0,
+  "AllowDockerImageChange": false,
+  "DockerImages": [
+    {
+      "DisplayName": "ghcr.io/tnsstudio-hq/moonlightdockerimages:linuxserver",
+      "Name": "ghcr.io/tnsstudio-hq/moonlightdockerimages:linuxserver",
+      "AutoPull": true
+    }
+  ]
+}
