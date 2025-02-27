@@ -4,7 +4,7 @@
   "UpdateUrl": "https://raw.githubusercontent.com/TNSStudio-HQ/MoonlightImages/main/games/MinecraftPaper.json",
   "DonateUrl": "https://ko-fi.com/tnsjesper",
   "StartupCommand": "java --add-modules=jdk.incubator.vector -Xms128M -Xmx{{SERVER_MEMORY}}M -Dterminal.jline=false -Dterminal.ansi=true -jar {{SERVER_JARFILE}}",
-  "OnlineDetection": "Type !help for help.",
+  "OnlineDetection": "Done",
   "StopCommand": "stop",
   "InstallShell": "/bin/bash",
   "InstallDockerImage": "debian:latest",

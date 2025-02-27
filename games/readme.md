@@ -4,4 +4,6 @@ Games are finished images that run a game server.<br>
 Like Minecraft or Terraria, etc.<br>
 They also offer settings such as ports and more.<br>
 
-- [Paper](/games/MinecraftPaper.json)
+## Minecraft
+- [Paper](/games/minecraft/MinecraftPaper.json)
+- [Minecraft Forge](/games/minecraft/MinecraftForge(Modded).json)
