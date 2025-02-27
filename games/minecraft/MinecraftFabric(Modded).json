@@ -1,7 +1,7 @@
 {
   "Name": "Minecraft Fabric (Modded)",
   "Author": "contact@nexocrew.com",
-  "UpdateUrl": null,
+  "UpdateUrl": "https://raw.githubusercontent.com/nexocrew-HQ/MoonlightImages/refs/heads/main/games/minecraft/MinecraftFabric(Modded).json",
   "DonateUrl": "https://ko-fi.com/jesforge",
   "StartupCommand": "java -Xms128M -Xmx{{SERVER_MEMORY}}M -jar {{SERVER_JARFILE}}",
   "OnlineDetection": "Done",
