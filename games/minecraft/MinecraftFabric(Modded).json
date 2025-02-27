@@ -1,0 +1,101 @@
+{
+  "Name": "Minecraft Fabric (Modded)",
+  "Author": "contact@nexocrew.com",
+  "UpdateUrl": null,
+  "DonateUrl": "https://ko-fi.com/jesforge",
+  "StartupCommand": "java -Xms128M -Xmx{{SERVER_MEMORY}}M -jar {{SERVER_JARFILE}}",
+  "OnlineDetection": "Done",
+  "StopCommand": "stop",
+  "InstallShell": "/bin/bash",
+  "InstallDockerImage": "openjdk:11-jdk-slim",
+  "InstallScript": "#!/bin/bash\r\n\r\napt update\r\napt install -y curl jq unzip dos2unix wget\r\nmkdir -p /mnt/server\r\ncd /mnt/server\r\n\r\nif [ -z \"$MC_VERSION\" ] || [ \"$MC_VERSION\" == \"latest\" ]; then\r\n  MC_VERSION=$(curl -sSL https://meta.fabricmc.net/v2/versions/game | jq -r '.[] | select(.stable== true )|.version' | head -n1)\r\nelif [ \"$MC_VERSION\" == \"snapshot\" ]; then\r\n  MC_VERSION=$(curl -sSL https://meta.fabricmc.net/v2/versions/game | jq -r '.[] | select(.stable== false )|.version' | head -n1)\r\nfi\r\n\r\nif [ -z \"$FABRIC_VERSION\" ] || [ \"$FABRIC_VERSION\" == \"latest\" ]; then\r\n  FABRIC_VERSION=$(curl -sSL https://meta.fabricmc.net/v2/versions/installer | jq -r '.[0].version')\r\nfi\r\n\r\nif [ -z \"$LOADER_VERSION\" ] || [ \"$LOADER_VERSION\" == \"latest\" ]; then\r\n  LOADER_VERSION=$(curl -sSL https://meta.fabricmc.net/v2/versions/loader | jq -r '.[] | select(.stable== true )|.version' | head -n1)\r\nelif [ \"$LOADER_VERSION\" == \"snapshot\" ]; then\r\n  LOADER_VERSION=$(curl -sSL https://meta.fabricmc.net/v2/versions/loader | jq -r '.[] | select(.stable== false )|.version' | head -n1)\r\nfi\r\n\r\nwget -O fabric-installer.jar https://maven.fabricmc.net/net/fabricmc/fabric-installer/$FABRIC_VERSION/fabric-installer-$FABRIC_VERSION.jar\r\njava -jar fabric-installer.jar server -mcversion $MC_VERSION -loader $LOADER_VERSION -downloadMinecraft\r\nmv server.jar minecraft-server.jar\r\nmv fabric-server-launch.jar server.jar\r\necho \"serverJar=minecraft-server.jar\" > fabric-server-launcher.properties\r\necho -e \"Install Complete\"",
+  "ParseConfiguration": "[{\"Type\":\"properties\",\"File\":\"server.properties\",\"Configuration\":{\"server-ip\":\"0.0.0.0\",\"enable-query\":\"true\",\"server-port\":\"{{SERVER_PORT}}\"}}]",
+  "AllocationsNeeded": 1,
+  "Variables": [
+    {
+      "Key": "FABRIC_VERSION",
+      "DefaultValue": "latest",
+      "DisplayName": "Fabric Version",
+      "Description": "The version of Fabric to install.",
+      "AllowView": true,
+      "AllowEdit": true,
+      "Filter": null
+    },
+    {
+      "Key": "MC_VERSION",
+      "DefaultValue": "latest",
+      "DisplayName": "Minecraft Version",
+      "Description": "The version of Minecraft to install. Use \"latest\" to install the latest version, or use \"snapshot\" to install the latest snapshot.",
+      "AllowView": true,
+      "AllowEdit": true,
+      "Filter": null
+    },
+    {
+      "Key": "SERVER_JARFILE",
+      "DefaultValue": "server.jar",
+      "DisplayName": "Server Jar File",
+      "Description": "The name of the server jarfile to run the server with.",
+      "AllowView": true,
+      "AllowEdit": true,
+      "Filter": null
+    },
+    {
+      "Key": "LOADER_VERSION",
+      "DefaultValue": "latest",
+      "DisplayName": "Fabric Loader Version",
+      "Description": "The version of Fabric Loader to install.",
+      "AllowView": true,
+      "AllowEdit": true,
+      "Filter": null
+    }
+  ],
+  "DefaultDockerImage": 0,
+  "AllowDockerImageChange": true,
+  "DockerImages": [
+    {
+      "DisplayName": "Java 8",
+      "Name": "ghcr.io/nexocrew-hq/moonlightdockerimages:java8",
+      "AutoPull": true
+    },
+    {
+      "DisplayName": "Java 11",
+      "Name": "ghcr.io/nexocrew-hq/moonlightdockerimages:java11",
+      "AutoPull": true
+    },
+    {
+      "DisplayName": "Java 16",
+      "Name": "ghcr.io/nexocrew-hq/moonlightdockerimages:java16",
+      "AutoPull": true
+    },
+    {
+      "DisplayName": "Java 17",
+      "Name": "ghcr.io/nexocrew-hq/moonlightdockerimages:java17",
+      "AutoPull": true
+    },
+    {
+      "DisplayName": "Java 18",
+      "Name": "ghcr.io/nexocrew-hq/moonlightdockerimages:java18",
+      "AutoPull": true
+    },
+    {
+      "DisplayName": "Java 19",
+      "Name": "ghcr.io/nexocrew-hq/moonlightdockerimages:java19",
+      "AutoPull": true
+    },
+    {
+      "DisplayName": "Java 20",
+      "Name": "ghcr.io/nexocrew-hq/moonlightdockerimages:java20",
+      "AutoPull": true
+    },
+    {
+      "DisplayName": "Java 21",
+      "Name": "ghcr.io/nexocrew-hq/moonlightdockerimages:java21",
+      "AutoPull": true
+    },
+    {
+      "DisplayName": "Java 22",
+      "Name": "ghcr.io/nexocrew-hq/moonlightdockerimages:java22",
+      "AutoPull": true
+    }
+  ]
+}
