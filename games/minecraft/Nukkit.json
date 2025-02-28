@@ -1,7 +1,7 @@
 {
   "Name": "Nukkit",
   "Author": "contact@nexocrew.com",
-  "UpdateUrl": null,
+  "UpdateUrl": "https://raw.githubusercontent.com/nexocrew-HQ/MoonlightImages/refs/heads/main/games/minecraft/Nukkit.json",
   "DonateUrl": "https://ko-fi.com/jesforhe",
   "StartupCommand": "java -Xms128M -Xmx{{SERVER_MEMORY}}M -jar nukkit-1.0-SNAPSHOT.jar",
   "OnlineDetection": "\\)!\\ ",
