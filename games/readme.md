@@ -8,3 +8,5 @@ They also offer settings such as ports and more.<br>
 - [Paper](/games/minecraft/MinecraftPaper.json)
 - [Forge](/games/minecraft/MinecraftForge(Modded).json)
 - [Fabric](/games/minecraft/MinecraftFabric(Modded).json)
+- [NeoForge](/games/minecraft/MinecraftNeoForge(Moded).json)
+- [Bedrock: Nukkit](/games/minecraft/Nukkit.json)
