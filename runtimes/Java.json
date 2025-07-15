@@ -1,7 +1,7 @@
 {
   "Name": "Java",
   "Author": "dm@xyzjesper.dev",
-  "UpdateUrl": null,
+  "UpdateUrl": "https://raw.githubusercontent.com/xyzspace-dev/MoonlightImages/refs/heads/main/runtimes/Java.json",
   "DonateUrl": "https://ko-fi.com/xyzjesper",
   "StartupCommand": "echo \"Running ${JAVA_COMMAND}\" && ./start.sh",
   "OnlineDetection": "Running",
