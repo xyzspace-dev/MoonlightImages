@@ -1,0 +1,34 @@
+{
+  "Name": "Bun",
+  "Author": "dm@xyzjesper.dev",
+  "UpdateUrl": "https://raw.githubusercontent.com/xyzspace-dev/MoonlightImages/main/runtimes/Bun.json",
+  "DonateUrl": "https://ko-fi.com/xyzjesper",
+  "StartupCommand": "npm install; echo -e \"NodeJS is now ready\"; node ${MAIN_FILE} ",
+  "OnlineDetection": "NodeJS is now ready",
+  "StopCommand": "^C",
+  "InstallShell": "/bin/bash",
+  "InstallDockerImage": "debian:latest",
+  "InstallScript": "echo -e \"Hello and Welcome!\"\r\necho -e \"updating bun. please wait...\"\r\n\r\napt update && apt upgrade -y\r\necho -e \"Done.\"\r\n\r\nmkdir -p /mnt/server\r\ncd /mnt/server\r\n\r\necho \"Installing bun packages\"\r\n\r\nbun install\r\n\r\necho -e \"Bun is now ready.\"\r\nexit 0",
+  "ParseConfiguration": "[]",
+  "AllocationsNeeded": 1,
+  "Variables": [
+    {
+      "Key": "MAIN_FILE",
+      "DefaultValue": "index.js",
+      "DisplayName": "Main File",
+      "Description": "The Main File like index.js",
+      "AllowView": true,
+      "AllowEdit": true,
+      "Filter": null
+    }
+  ],
+  "DefaultDockerImage": 1,
+  "AllowDockerImageChange": true,
+  "DockerImages": [
+    {
+      "DisplayName": "Bun 1.2.19",
+      "Name": "ghcr.io/xyzspace-dev/moonlightdockerimages:bun1.2.19",
+      "AutoPull": true
+    }
+  ]
+}
