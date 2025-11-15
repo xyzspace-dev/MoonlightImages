@@ -1,7 +1,7 @@
 {
   "Name": "Folia",
   "Author": "hey@xyzjesper.dev",
-  "UpdateUrl": null,
+  "UpdateUrl": "https://raw.githubusercontent.com/xyzspace-dev/MoonlightImages/refs/heads/main/games/minecraft/Folia.json",
   "DonateUrl": "https://ko-fi.com/xyzjesper",
   "StartupCommand": "java --add-modules=jdk.incubator.vector -Xms128M -Xmx{{SERVER_MEMORY}}M -Dterminal.jline=false -Dterminal.ansi=true -jar {{SERVER_JARFILE}}",
   "OnlineDetection": "Done",
